@@ -1,23 +1,14 @@
-# A simple express es6 setup starter
-
-## Development env :
+## STEPS TO START THE WEB APP :
 
 clone the repo and cd to the Project Dir.
 
 then install packages with `npm install`
+
+get your Public key from https://ravesandbox.flutterwave.com/dashboard/settings/apis
+
+rename .env.sample file to .env and update your flutterwave public key
 
 then start the server with `npm run dev`
 
-#### note : all project code should be inside the src folder.
+## Please NOTE ALL RIDERS WILL NEED TO SUPPLY THEIR Sub ACCOUNT  ID
 
-## Production env :
-
-clone the repo and cd to the Project Dir.
-
-then install packages with `npm install`
-
-then run `npm run build` to build for production
-
-then start the server with `npm start`
-
-navigate to your browser and open http://localhost:4000 to view.
