@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>Hi-Taxi</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="" class="brand-logo">Hi-Taxi</a>
+      <ul class="right hide-on-med-and-down">
+        <button data-target="modal1" class="btn waves-effect waves-light orange modal-trigger">Make Payment</button>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#" data-target="modal1" class="modal-trigger">Make Payment</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Hi-Taxi <i class="material-icons prefix">directions_car
+        </i></h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Welcome to our Platform, Please Click the button below to pay for your ride.
+        </h5>
+      </div>
+      <div class="row center">
+        {{#if error_flash }} {{#each error_flash }}
+        <span class="toast red" style="display: none">{{this}}</span>
+
+        {{/each}} {{/if}}
+
+        <button data-target="modal1" class="btn-large waves-effect orange waves-light  modal-trigger">Make
+          Payment</button>
+      </div>
+      <br><br>
+    </div>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h5>Make Payment</h5>
+        <div class="row">
+          <form class="col s12" action="/payment" method="POST">
+            <div class="row">
+              <div class="input-field col s6">
+                <i class="material-icons prefix">email</i>
+                <input id="icon_email" type="text" name="email" class="validate">
+                <label for="icon_email">Your Email </label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">id</i>
+                <input id="icon_rider" name="rider_ID" type="text" class="validate">
+                <label for="icon_rider">Enter Rider ID </label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">money</i>
+                <input id="icon_amount" name="amount" type="text" class="validate">
+                <label for="icon_amount">Amount</label>
+              </div>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit">Submit
+              <i class="material-icons right">send</i>
+            </button>
+          </form>
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">close</a>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+</body>
+
+</html>
